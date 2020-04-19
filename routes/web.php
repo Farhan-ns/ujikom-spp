@@ -11,6 +11,15 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::namespace('Siswa')->group(function () {
+    Route::as('siswa.')->group(function () {
+
+        Route::get('/', 'LoginController@showLoginForm')->name('login'); 
+        Route::post('/', 'LoginController@login')->name('login'); 
+        Route::post('/home/logout', 'LoginController@logout')->name('logout');
+
+        Route::middleware('siswa')->group(function () {
+            Route::get('home', 'UserSiswaController@home')->name('home');
+        });
+    });
 });
