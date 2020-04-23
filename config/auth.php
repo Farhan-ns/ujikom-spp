@@ -51,6 +51,11 @@ return [
             'driver' => 'session',
             'provider' => 'siswas',
         ],
+
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'petugas',
+        ],
     ],
 
     /*
@@ -79,6 +84,12 @@ return [
         'siswas' => [
             'driver' => 'eloquent',
             'model' => App\Siswa::class,
+        ],
+
+        //admin
+        'petugas' => [
+            'driver' => 'eloquent',
+            'model' => App\Petugas::class,
         ],
 
         // 'users' => [
@@ -114,6 +125,12 @@ return [
             'table' => 'password_resets',
             'expire' => 60,
         ],
+
+        'admin' => [
+            'provider' => 'petugas',
+            'table' => 'password_resets',
+            'expire' => 60,
+        ]
     ],
 
     /*

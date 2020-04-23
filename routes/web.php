@@ -23,3 +23,20 @@ Route::namespace('Siswa')->group(function () {
         });
     });
 });
+
+Route::namespace('Admin')->group(function () {
+    Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
+        
+        Route::get('/', 'LoginController@showLoginForm')->name('login');
+        Route::post('/', 'LoginController@login')->name('login');
+        Route::get('/logout', 'LoginController@logout')->name('logout');
+        
+        Route::middleware('admin')->group(function () { 
+            Route::get('/dashboard', function() {
+                return view('admin.dashboard');
+            })->name('dashboard');
+
+            
+        });
+    });
+});

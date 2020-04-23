@@ -2,9 +2,9 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Petugas extends Model
+class Petugas extends Authenticatable
 {
     protected $fillable = [
         'username', 'password', 'nama_petugas'

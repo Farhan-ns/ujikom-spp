@@ -17,11 +17,11 @@
         
         <div class="card card-signin ">
           <div class="card-body">
-            <h5 class="card-title text-center">Ujikom - SPP</h5>
-            <form class="form-signin" method="POST" action="{{ route('siswa.login') }}">
+            <h5 class="card-title text-center">Ujikom - SPP - Admin</h5>
+            <form class="form-signin" method="POST" action="{{ route('admin.login') }}">
               {{ csrf_field() }}
               <div class="form-label-group">
-                <input type="number" name="nisn" id="nisn" class="form-control rounded-pill" placeholder="NISN" value="{{ old('nisn') }}" required autofocus>
+                <input type="text" name="username" id="username" class="form-control rounded-pill" placeholder="Username" value="{{ old('username') }}" required autofocus>
                 <div class="invalid-feedback">
                   
                 </div>
@@ -29,7 +29,7 @@
               
               <div class="form-label-group">
                 <div class="input-group">
-                  <input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
+                  <input type="password" name="password" id="password" class="form-control rounded-pill" placeholder="Password" required>
                   <div class="input-group-append" id="show-hide-password">
                     <span class="input-group-text" >
                       <a href=""><i class="fa fa-eye-slash"></i></a>
