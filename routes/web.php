@@ -36,7 +36,12 @@ Route::namespace('Admin')->group(function () {
                 return view('admin.dashboard');
             })->name('dashboard');
 
-            
+            Route::prefix('r')->group(function () {
+                Route::resource('petugas', 'PetugasController');
+                Route::resource('siswa', 'SiswaController');
+                Route::resource('kelas', 'KelasController');
+                Route::resource('spp', 'SPPController');
+            });
         });
     });
 });

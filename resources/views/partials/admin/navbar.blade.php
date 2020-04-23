@@ -12,7 +12,7 @@
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                   <a class="dropdown-item disabled" href="#">Profil</a>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#">Logout</a>
+                  <a class="dropdown-item" href="{{ route('admin.logout') }}">Logout</a>
                 </div>
               </li>
             </ul>
